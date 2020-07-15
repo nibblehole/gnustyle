@@ -1,0 +1,12 @@
+{% from 'gnustyle/macros.html' import search_bar %}
+
+{% call search_bar(q, true, rtl) %}
+  <div id="search_params">
+    {% include 'gnustyle/components/categories.html' %}
+    <span id="time_and_lang">
+      {% set flat_lang_selector = True %}
+      {% include 'gnustyle/components/languages.html' %}
+      {% include 'gnustyle/components/time-range.html' %}
+    </span>
+  </div>
+{% endcall %}
