@@ -12,29 +12,6 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with searx. If not, see < http://www.gnu.org/licenses/ >.
  *
- * (C) 2014 by Thomas Pointhuber, <thomas.pointhuber@gmx.at>
- */
-
-requirejs.config({
-    baseUrl: './static/themes/oscar/js',
-    paths: {
-        app: '../app'
-    }
-});
-;/**
- * searx is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * searx is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with searx. If not, see < http://www.gnu.org/licenses/ >.
- *
  * (C) 2019 by Alexandre Flament
  */
 window.searx = (function(d) {
@@ -332,7 +309,6 @@ $(document).ready(function(){
                     break;
             }
             if(query) {
-                //alert(query);
                 var ajaxRequest = $.ajax( query )
                 .done(function( html) {
                     if(html && html.elements && html.elements[0]) {
@@ -400,9 +376,7 @@ $(document).ready(function(){
                 map_bounds = L.latLngBounds(southWest, northEast);
             }
 
-            // TODO hack
-            // change default imagePath
-            L.Icon.Default.imagePath =  "./static/themes/oscar/img/map";
+            L.Icon.Default.imagePath =  "./static/img/map";
 
             // init map
             var map = L.map(leaflet_target);
@@ -443,8 +417,6 @@ $(document).ready(function(){
 
             if(map_geojson)
                 L.geoJson(map_geojson).addTo(map);
-            /*else if(map_bounds)
-                L.rectangle(map_bounds, {color: "#ff7800", weight: 3, fill:false}).addTo(map);*/
         });
 
         // this event occour only once per element

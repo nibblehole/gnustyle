@@ -46,7 +46,6 @@ $(document).ready(function(){
                     break;
             }
             if(query) {
-                //alert(query);
                 var ajaxRequest = $.ajax( query )
                 .done(function( html) {
                     if(html && html.elements && html.elements[0]) {
@@ -114,9 +113,7 @@ $(document).ready(function(){
                 map_bounds = L.latLngBounds(southWest, northEast);
             }
 
-            // TODO hack
-            // change default imagePath
-            L.Icon.Default.imagePath =  "./static/themes/oscar/img/map";
+            L.Icon.Default.imagePath =  "./static/img/map";
 
             // init map
             var map = L.map(leaflet_target);
@@ -157,8 +154,6 @@ $(document).ready(function(){
 
             if(map_geojson)
                 L.geoJson(map_geojson).addTo(map);
-            /*else if(map_bounds)
-                L.rectangle(map_bounds, {color: "#ff7800", weight: 3, fill:false}).addTo(map);*/
         });
 
         // this event occour only once per element
