@@ -19,12 +19,6 @@
         <link rel="stylesheet" href="{{ url_for('static', filename=css) }}" type="text/css" />
     {% endfor %}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="{{ url_for('static', filename='js/html5shiv.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/respond.min.js') }}"></script>
-    <![endif]-->
-
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" />
 
     {% block styles %}
@@ -34,14 +28,6 @@
 
     <link title="{{ instance_name }}" type="application/opensearchdescription+xml" rel="search" href="{{ url_for('opensearch') }}"/>
 
-    <noscript>
-        <style type="text/css">
-            .tab-content > .active_if_nojs, .active_if_nojs {display: block !important; visibility: visible !important;}
-            .margin_top_if_nojs {margin-top: 20px;}
-            .hide_if_nojs {display: none !important;overflow:none !important;}
-            .disabled_if_nojs {pointer-events: none; cursor: default; text-decoration: line-through;}
-        </style>
-    </noscript>
 </head>
 
 
@@ -85,7 +71,7 @@
             <small>
                 searx.gnu.style 2020,
                 {{ _('Powered by') }} <a href="https://github.com/asciimoo/searx">searx</a> {{ version[0] }}.
-                {#
+                {# TODO: Add own links
                 <span class="links">
                     <a href="https://e.foundation">{{ _('About') }}</a>
                     <a href="https://e.foundation/legal-notice-privacy">{{ _('Privacy') }}</a>
