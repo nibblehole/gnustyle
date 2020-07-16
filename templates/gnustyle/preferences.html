@@ -117,8 +117,8 @@
                         <span class="data">
                            <b>{{ search_engine.name }}</b><br>
                             <small class="danger"><i>
-                                {% set support_text_str = [(stats[search_engine.name].supports_selected_language, "%s %s " | format(locales[current_locale], _("not supported"))), 
-                                                           (search_engine.safesearch == True, _("No safe search")), 
+                                {% set support_text_str = [(stats[search_engine.name].supports_selected_language, "%s %s " | format(locales[current_locale], _("not supported"))),
+                                                           (search_engine.safesearch == True, _("No safe search")),
                                                            (not(stats[search_engine.name]['warn_time'] or stats[search_engine.name]['warn_timeout']), _("Slow"))] %}
                                 {{ support_text_str | rejectattr(0) | map(attribute=1) | join(", ") }}
                             </i></small>
@@ -134,7 +134,7 @@
         <input type="radio" class="tab-radio" id="tab_advanced_r" value="advanced" name="tab">
         <div id="tab_advanced" class="tab-content">
             <section>
-                <h3>{{_("Plugins")}}</h3>            
+                <h3>{{_("Plugins")}}</h3>
                 <fieldset>
                     <ul>
                         {% for plugin in plugins %}
@@ -223,7 +223,7 @@
 
         <div>
             <p>{{ _('Search URL of the currently saved preferences') }} <small class="text-muted">({{ _('Note: specifying custom settings in the search URL can reduce privacy by leaking data to the clicked result sites.') }})</small>:<br/> </p>
-            <input readonly="" class="select-all-on-click block" type="url" value="{{ url_for('index', _external=True) }}?preferences={{ preferences_url_params|e }}{% raw %}&amp;q=%s{% endraw %}">
+            <input readonly="" class="select-all-on-click block" type="url" value="{{ base_url }}?preferences={{ preferences_url_params|e }}{% raw %}&amp;q=%s{% endraw %}">
         </div>
 
         <section id="action_buttons">
