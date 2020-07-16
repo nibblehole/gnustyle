@@ -21,7 +21,7 @@ a {
 .disabled,
 [disabled],
 #preferences #engines .engine input:checked ~ .data {
-  opacity: .4;
+  opacity: 0.4;
 }
 #pagination {
   margin-top: 48px;
@@ -202,12 +202,12 @@ a {
 .btn.primary,
 input.btn[type="submit"] {
   background-color: #5068dd;
-  color: #ffffff;
+  color: white;
   border-color: rgba(0, 0, 0, 0.2);
 }
 .btn.primary:hover,
 input.btn[type="submit"]:hover {
-  color: #ffffff;
+  color: white;
   background-color: #2344a2;
 }
 .btn.danger {
@@ -217,7 +217,7 @@ input.btn[type="submit"]:hover {
 .btn.danger:hover {
   border-color: rgba(0, 0, 0, 0.2);
   background-color: #e06572;
-  color: #ffffff;
+  color: white;
 }
 .btn.btn-flat {
   border: none;
@@ -554,7 +554,7 @@ nav #gnustyle_links > * {
   position: absolute;
   left: 0;
   right: 0 !important;
-  top: calc(116%) !important;
+  top: calc(100% + 16px) !important;
   border-radius: 8px;
   border: 2px solid rgba(0, 0, 0, 0.2);
   width: 100% !important;
@@ -907,9 +907,9 @@ nav #gnustyle_links > * {
 }
 #suggestions form .btn,
 #corrections form .btn {
+  text-transform: none;
   font-size: 14px;
   text-align: left;
-  text-transform: none;
 }
 .infobox {
   margin-top: 32px;

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! gnustyle/searx.min.js | <%= grunt.template.today("dd-mm-yyyy") %> | https://github.com/asciimoo/searx */\n'
+        banner: '/*! gnustyle/searx.min.js | <%= grunt.template.today("dd-mm-yyyy") %> | https://github.com/dasj19/gnustyle */\n'
       },
       dist: {
         files: {
@@ -38,28 +38,16 @@ module.exports = function(grunt) {
         development: {
             options: {
                 paths: ["less/gnustyle"]
-                //banner: '/*! less/gnustyle/oscar.css | <%= grunt.template.today("dd-mm-yyyy") %> | https://github.com/asciimoo/searx */\n'
             },
             files: {"css/gnustyle.css": "less/gnustyle/gnustyle.less"}
         },
         production: {
             options: {
                 paths: ["less/gnustyle"],
-                //banner: '/*! less/gnustyle/oscar.css | <%= grunt.template.today("dd-mm-yyyy") %> | https://github.com/asciimoo/searx */\n',
                 cleancss: true
             },
             files: {"css/gnustyle.min.css": "less/gnustyle/gnustyle.less"}
         },
-        /*
-        // built with ./manage.sh styles
-        bootstrap: {
-            options: {
-                paths: ["less/bootstrap"],
-                cleancss: true
-            },
-            files: {"css/bootstrap.min.css": "less/bootstrap/bootstrap.less"}
-        },
-        */
     },
     watch: {
         scripts: {
