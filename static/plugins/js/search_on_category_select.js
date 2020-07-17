@@ -33,7 +33,7 @@ $(document).ready(function() {
 });
 
 function getHttpRequest() {
-    httpRequest = "POST";
+    httpRequest = "GET";
     urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('method')) {
         httpRequest = urlParams.get('method');
