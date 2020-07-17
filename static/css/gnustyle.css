@@ -260,6 +260,9 @@ input.btn[type="submit"]:hover {
   display: none;
 }
 .custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   font-weight: normal;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
