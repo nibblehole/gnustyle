@@ -6,9 +6,9 @@ $(document).ready(function() {
             });
             $(document.getElementById($(this).attr("for"))).prop('checked', true);
             if($('#q').val()) {
-                if (getHttpRequest() == "GET") {
-                    $('#search_form').attr('action', $('#search_form').serialize());
-                }
+                // if (getHttpRequest() == "GET") {
+                //     $('#search_form').attr('action', $('#search_form').serialize());
+                // }
                 $('#search_form').submit();
             }
             return false;
