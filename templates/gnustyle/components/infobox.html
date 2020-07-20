@@ -14,9 +14,9 @@
                 <img class="main-image" src="{{ image_proxify(infobox.img_src) }}" alt=""/>
             </div>
             {% endif %}
-    
+
             {% if infobox.content %}
-            <p class="content"><bdi>{{ infobox.content }}</bdi></p> 
+            <p class="content"><bdi>{{ infobox.content }}</bdi></p>
             {% endif %}
         </div>
 
@@ -42,7 +42,7 @@
             <p>{{_("More information:")}}</p>
             <bdi>
             {% for url in infobox.urls %}
-            {{ result_link(url.url, url.title, 'btn btn-flat') }}
+            {{ result_link(url.url, url.title | striptags, 'btn btn-flat') }}
             {% endfor %}
             </bdi>
         </div>
