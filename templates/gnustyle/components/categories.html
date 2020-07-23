@@ -3,7 +3,7 @@
     <label for="checkbox_{{ category|replace(' ', '_') }}">{{ _(category) }}</label>
 {%- endmacro -%}
 
-{% set main_categories = ["general", "images", "videos", "news"] %}
+{% set main_categories = ["general", "images", "videos", "news", "map"] %}
 
 <div id="categories" {% if rtl %} class="rtl" {% endif %}>
     {% for category in categories %}
@@ -20,7 +20,7 @@
         <span id="show_less_categories_" class="hidden">{{_("Less")}}</span>
         <div id="more_categories">
             {% for category in categories %}
-                {% if not (category in main_categories + ["map"] or category in selected_categories) %}
+                {% if not (category in main_categories or category in selected_categories) %}
                     {{ category_widget(category) }}
                 {% endif %}
             {% endfor %}
