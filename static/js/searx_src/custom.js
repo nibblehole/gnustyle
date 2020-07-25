@@ -77,21 +77,5 @@ $(document).ready(function(){
       "language": $("select[name='language']").find('option:selected').attr("value"),
       "time_range": $("select[name='time_range']").find('option:selected').attr("value")
     });
-
-    fetch("/?categories=images&" + query_params, {"headers": headers})
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        if (data.results) {
-          $("#default_images_container").append(build_image(data.results.slice(0, 5)));
-        }
-      });
-
-    fetch("/?categories=videos&" + query_params, {"headers": headers})
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        if (data.results) {
-          $(".videos-gallery").append(build_video(data.results.slice(0, 2)));
-        }
-      });
   }
 });
