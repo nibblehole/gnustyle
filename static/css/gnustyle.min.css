@@ -567,10 +567,10 @@ nav #gnustyle_links > * {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  padding-bottom: 16px;
   padding-top: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 #search_form #search_params select,
 #search_form #search_params label {

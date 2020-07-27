@@ -27,7 +27,7 @@
       background-color: transparent;
     }
     #q:focus { outline: none; }
-  
+
     button[type="submit"] {
       position: relative;
       height: 100%;
@@ -40,11 +40,11 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-  
+
       .icon { transition: fill 0.2s ease-in-out, transform 0.1s ease-in-out; }
     }
     button[type="submit"]:hover {
-      .icon { 
+      .icon {
         fill: @color_accent;
         transform: scale(1.2);
       }
@@ -52,7 +52,7 @@
   }
 
   // inline search form
-  #logo, #logo_link { 
+  #logo, #logo_link {
     height: @logo-link-size;
   }
   #logo_link {
@@ -113,10 +113,10 @@
     display: flex;
     justify-content: space-between;
     font-size: @fontsize_small;
-    padding-bottom: @spacing_large;
     padding-top: @spacing_large;
-    padding-left: @spacing_x-large;
-    padding-right: @spacing_x-large;
+    padding-bottom: @spacing_large;
+    padding-left: @spacing_large;
+    padding-right: @spacing_large;
 
     select, label { font-size: @fontsize_small; }
     select {
@@ -129,7 +129,7 @@
       // > :first-child { margin-right: @spacing_large; }
       > * { width: 160px; }
     }
-    
+
   }
 
 
@@ -140,7 +140,7 @@
     align-items: center;
     position: relative;
     flex: 100%;
-  
+
     label {
       flex-basis: auto;
       font-size: @fontsize_small;
@@ -148,7 +148,7 @@
       margin-right: @spacing_large;
       cursor: pointer;
     }
-  
+
     input[type="checkbox"]:checked + label {
       color: @color_accent;
       font-weight: bold;
@@ -205,7 +205,7 @@
     #search_params {
       overflow-x: scroll;
 
-      #time_and_lang { 
+      #time_and_lang {
         display: flex;
         margin-left: @spacing_xx-large;
         > * { width: auto; }
