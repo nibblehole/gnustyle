@@ -1,6 +1,7 @@
 <div{% if rtl %} dir="ltr"{% endif %}>
-  <h1>About <a href="{{ url_for('index') }}">searx</a></h1>
+  <h1>About this <a href="{{ url_for('index') }}">searx</a> instance</h1>
 
+  <h2>What is searx?</h2>
   <p>
     Searx is a <a href="https://en.wikipedia.org/wiki/Metasearch_engine">metasearch engine</a>,
     aggregating the results of other <a href="{{ url_for('preferences') }}">search engines</a>
@@ -18,84 +19,54 @@
 
   <hr />
 
-  <h2>Why use searx?</h2>
+  <h2>What does searx.gnu.style do different from a vanilla searx?</h2>
 
+  <p>searx.gnu.style focuses on privacy, speed and security.</p>
+  <h3>Privacy</h3>
   <ul>
     <li>
-      Searx may not offer you as personalised results as Google, but it doesn't
-      generate a profile about you.
-    </li>
-    <li>
-      Searx doesn't care about what you search for, never shares anything with a
-      third party, and it can't be used to compromise you.
-    </li>
-    <li>
-      Searx is free software, the code is 100% open and you can help to make it
-      better.  See more on <a href="https://github.com/asciimoo/searx">github</a>.
+      All webserver logs are sent to /dev/null. This increases privacy as well as speed.
+      However if you try to hack the instance with for instance sql injection or XSS queries, your actions will be logged.
     </li>
   </ul>
-
-  <p>
-    If you do care about privacy, want to be a conscious user, or otherwise
-    believe in digital freedom, make searx your default search engine or run it
-    on your own server
-  </p>
-
-  <h2>Technical details - How does it work?</h2>
-
-  <p>
-    Searx is a <a href="https://en.wikipedia.org/wiki/Metasearch_engine">metasearch engine</a>,
-    inspired by the <a href="https://beniz.github.io/seeks/">seeks project</a>.
-
-    It provides basic privacy by mixing your queries with searches on other
-    platforms without storing search data. Queries are made using a POST request
-    on every browser (except chrome*).  Therefore they show up in neither our
-    logs, nor your url history.  In case of Chrome* users there is an exception,
-    searx uses the search bar to perform GET requests.
-
-    Searx can be added to your browser's search bar; moreover, it can be set as
-    the default search engine.
-  </p>
-
-  <h2 id='add to browser'>How to set as the default search engine?</h2>
-
-  <p>
-    Searx supports <a href="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md">OpenSearch</a>.
-    For more information on changing your default search engine, see your browser's documentation:
-  </p>
-
+  <h3>Speed</h3>
   <ul>
-    <li><a href="https://support.mozilla.org/en-US/kb/add-or-remove-search-engine-firefox">Firefox</a></li>
-    <li><a href="https://support.microsoft.com/en-us/help/4028574/microsoft-edge-change-the-default-search-engine" >Microsoft Egde</a></li>
-    <li>Chrome based browsers <a href="https://www.chromium.org/tab-to-search">only add websites that the user navigates to without a path.</a>
+    <li>
+      To achieve speed the search query response is capped at 0.6 seconds for the general category.
+      If you experience lack of search results you should try submitting the query again.
+    </li>
+    <li>
+      searx.gnu.style strives for the first places on <a href="https://searx.space">searx.space</a>.
+      Besides that the instance is regularly checked with Google PageSpeed Insights, Pingdom's Website Speed Test
+      and GTmetrix Website Speed Analysis where it gets scores of 100 or close to 100.
+      If you would like to see the test results, click on the following links:
+      <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fsearx.gnu.style%2F%3Fq%3Dwhy%2Bare%2Byou%2Bso%2Bslow">
+        Google PageSpeed Insights
+      </a>,
+      <a href="https://tools.pingdom.com/#5ce689d6ef400000">Pingdom Speed Test</a>,
+      <a href="https://gtmetrix.com/reports/searx.gnu.style/6WPW44QE">GTmetrix Analysis</a>
+    </li>
   </ul>
-
-  <h2>Where to find anonymous usage statistics of this instance ?</h2>
-
-  <p>
-    <a href="{{ url_for('stats') }}">Stats page</a> contains some useful data about the engines used.
-  </p>
-
-  <h2>How can I make it my own?</h2>
-
-  <p>
-    Searx appreciates your concern regarding logs, so take the
-    code from the <a href="https://github.com/asciimoo/searx">original searx project</a> and
-    run it yourself!
-  </p>
-  <p>
-    Add your searx instance to this <a href="{{ brand.PUBLIC_INSTANCES }}"> list
-    of public searx instances</a> to help other people reclaim their privacy and
-    make the Internet freer!  The more decentralized the Internet is, the more
-    freedom we have!
-  </p>
-
-  <h2>Where are the docs & code of this instance?</h2>
-
-  <p>
-    See the <a href="{{ brand.DOCS_URL }}">{{ brand.DOCS_URL }}</a>
-    and <a href="{{ brand.GIT_URL }}">{{ brand.GIT_URL }}</a>
-  </p>
+  <h3>Security</h3>
+  <ul>
+    <li>
+     searx.gnu.style enforces HTTPS connections and HTTP/2 transfers.
+     Test results:
+     <a href="https://www.ssllabs.com/ssltest/analyze?d=searx.gnu.style">SSL Labs Report</a>,
+     <a href="https://securityheaders.com/?followRedirects=on&hide=on&q=searx.gnu.style">Security Headers Report</a>,
+     <a href="https://tls.imirhil.fr/https/searx.gnu.style">CryptCheck</a>,
+     <a href="https://www.immuniweb.com/ssl/?id=NDH0tBPe">Immuniweb</a>,
+     <a href="https://hstspreload.org/?domain=searx.gnu.style">HSTS Preload</a>,
+     <a href="https://observatory.mozilla.org/analyze/searx.gnu.style#tls">Mozilla TLS Observatory</a>
+    </li>
+    <li>
+      Content Security Policy is implemented at the webserver level to protect against
+      XSS, click-jacking and other attacks.
+      If you would like to check the test results, click on the following links:
+      <a href="https://csp-evaluator.withgoogle.com/?csp=https://searx.gnu.style">Google CSP Evaluator</a>,
+      <a href="https://observatory.mozilla.org/analyze/searx.gnu.style">Mozilla HTTP Observatory</a>
+      <a href="https://cspvalidator.org/#url=https://searx.gnu.style/">CSP Validator</a>
+    </li>
+  </ul>
 
 </div>
-{% include "__common__/aboutextend.html" ignore missing %}
