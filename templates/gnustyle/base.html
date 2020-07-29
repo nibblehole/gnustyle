@@ -80,8 +80,6 @@
 
 
     <script src="{{ url_for('static', filename='js/zepto.min.js') }}"></script>
-    {% if autocomplete %}<script src="{{ url_for('static', filename='js/typeahead.bundle.min.js') }}"></script>{% endif %}
-    <script src="{{ url_for('static', filename='js/require-2.1.15.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/searx.min.js') }}"></script>
 
     {% for script in scripts %}

@@ -353,7 +353,7 @@ $(document).ready(function(){
         var map_boundingbox = $(this).data('map-boundingbox');
         var map_geojson = $(this).data('map-geojson');
 
-        require(['leaflet-0.7.3.min'], function(leaflet) {
+        $.getScript('leaflet-0.7.3.min.js', function() {
             if(map_boundingbox) {
                 southWest = L.latLng(map_boundingbox[0], map_boundingbox[2]);
                 northEast = L.latLng(map_boundingbox[1], map_boundingbox[3]);
